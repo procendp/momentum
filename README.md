@@ -1,4 +1,4 @@
-# Practicing JavaScript and
+# Practicing JavaScript and making simple web
 
  - learning JavaScript
  - practicing JavaScript skills
