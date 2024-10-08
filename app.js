@@ -2,69 +2,79 @@ const h1 = document.querySelector("div.hello:first-child h1");      // CSS 방�
 
 // h1 click
 function handleTitleClick(){
-    h1.style.color = "red";
-    h1.innerText = "Mouse Click!";
+    const clickedClass ="clickActive";
+
+    h1.classList.toggle(clickedClass);
+    // toggle로 대체 가능 <like button> ----------------------------
+    // if (h1.classList.contains(clickedClass)) {
+    //     h1.classList.remove(clickedClass);
+    // }
+    // else{
+    //     h1.classList.add(clickedClass);
+    // }
+    // -----------------------------------------------
+
+
+    /*  
+        h1.className = "clickActive";    // CSS 내 클래스 불러오는 방법
+        
+        h1.style.color = "green"; 
+        -> 이것처럼 CSS 변경 사항을 자바스크립트에서 직접 처리하는 것보다 
+            위처럼 CSS에서 처리하고 여기서 동작하게 만드는 게 좋은 구조 
+    */
 }
 
-// h1 mouse enter
-function handleTitleHover(){
-    h1.style.color = "green";
-    h1.innerText = "Mouse Here!";
-}
-
-// h1 mouse leave
-function handleTitleLeave(){
-    h1.style.color = "blue";
-    h1.innerText = "Mouse Gone!";
-}
-
-// 웹 화면 크기 변경할 때
-function handleWindowResize(){
-    document.body.style.backgroundColor = "tomato";
-}
-
-// 페이지에서 ctrl + c 할 때
-function handleWindowCopy(){
-    alert("You can't copy anything in this page");
-}
-
-// wifi disconnect
-function handleWindowOffline(){
-    alert("No WIFI!");
-}
-
-// wifi connect
-function handleWindowOnline(){
-    alert("GOOD WIFI!");
-}
-
-h1.addEventListener("click", handleTitleClick)       // 'click하면' 다음 함수를 불러옴..  <*** handleTitleClick() 은 실행하는 순간 불러옴>
-h1.addEventListener("mouseenter", handleTitleHover)  // mouse enter (hover)
-h1.addEventListener("mouseleave", handleTitleLeave)  // mouse leave
-// h1.onclick = handleTitleClick;
-// h1.onmouseenter = handleTitleHover;      // 위와 같음
-// h1.onmouseleave = handleTitleLeave;      // 하지만 이렇게 사용하면 removeEventListener 할 수 없음
-
-
-window.addEventListener("resize", handleWindowResize)
-window.addEventListener("copy", handleWindowCopy)
-window.addEventListener("offline", handleWindowOffline)
-window.addEventListener("online", handleWindowOnline)
+h1.addEventListener("click", handleTitleClick);
 
 
 
+// =========================================================================================================================
+// // h1 mouse enter
+// function handleTitleHover(){
+//     h1.style.color = "green";
+//     h1.innerText = "Mouse Here!";
+// }
+
+// // h1 mouse leave
+// function handleTitleLeave(){
+//     h1.style.color = "blue";
+//     h1.innerText = "Mouse Gone!";
+// }
+
+// // 웹 화면 크기 변경할 때
+// function handleWindowResize(){
+//     document.body.style.backgroundColor = "tomato";
+// }
+
+// // 페이지에서 ctrl + c 할 때
+// function handleWindowCopy(){
+//     alert("You can't copy anything in this page");
+// }
+
+// // wifi disconnect
+// function handleWindowOffline(){
+//     alert("No WIFI!");
+// }
+
+// // wifi connect
+// function handleWindowOnline(){
+//     alert("GOOD WIFI!");
+// }
+
+// h1.addEventListener("click", handleTitleClick)       // 'click하면' 다음 함수를 불러옴..  <*** handleTitleClick() 은 실행하는 순간 불러옴>
+// h1.addEventListener("mouseenter", handleTitleHover)  // mouse enter (hover)
+// h1.addEventListener("mouseleave", handleTitleLeave)  // mouse leave
+// // h1.onclick = handleTitleClick;
+// // h1.onmouseenter = handleTitleHover;      // 위와 같음
+// // h1.onmouseleave = handleTitleLeave;      // 하지만 이렇게 사용하면 removeEventListener 할 수 없음
 
 
+// window.addEventListener("resize", handleWindowResize)
+// window.addEventListener("copy", handleWindowCopy)
+// window.addEventListener("offline", handleWindowOffline)
+// window.addEventListener("online", handleWindowOnline)
 
-
-
-
-
-
-
-
-
-
+// =========================================================================================================================
 
 /*
 [자바스크립트를 통해 HTML 가져오기]
