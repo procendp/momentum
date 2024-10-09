@@ -1,18 +1,80 @@
-const h1 = document.querySelector("div.hello:first-child h1");      // CSS 방식.. class hello를 찾고
+const loginForm = document.querySelector("#loginForm");
+const loginInput = document.querySelector("#loginForm input");
+// const loginInput = loginForm.querySelector("input");
+// const loginButton = loginForm.querySelector("button");
+
+const link= document.querySelector("a");
+const greeting = document.querySelector("#greeting")
+
+const HIDDEN_CLASSNAME = "hidden";  //string 담는 건 대문자로 써주는 게 관례
+const USSERNAME_KEY = "userName";  //string 담는 건 대문자로 써주는 게 관례
+
+function onLoginSubmit(event){
+    event.preventDefault();  // preventDefault() : 어떤 event의 기본 행동이든지 발생되지 않도록 막는 것
+                                                // 누군가 form을 submit하면 브라우저는 기본적으로 페이지를 새로고침하는데 이걸로 막음
+    
+    loginForm.classList.add(HIDDEN_CLASSNAME);  // 로그인 후 input란 숨겨주기
+    const userName = loginInput.value;
+    localStorage.setItem(USSERNAME_KEY, userName); // input된 값 localStorage에 저장
+    paintGreetings(userName);
+    // const userName = loginInput.value;
+       // if (userName === "") {
+       //     // loginInput.value = "hello "
+       //     alert("Plese write your name");
+       // }
+       // else if (userName.length > 15) {
+       //     alert("your name is too long. please text again");
+        
+       // }
+       // console.log(loginInput.value);
+}
+
+// function handleLinkClick(event){
+//     event.preventDefault();
+//     // alert("Clicked!");
+// }
+
+// loginButton.addEventListener("click", onLoginBtnClick)
+loginForm.addEventListener("submit", onLoginSubmit)
+// link.addEventListener("click", handleLinkClick)
+
+function paintGreetings(userName){
+    greeting.classList.remove(userName);    // 숨어있던 greeting 보여주기
+    greeting.innerText = `Hello ${savedUserName}!!`;
+    // greeting.innerText = "Hello " + userName + "!";
+}
+
+const savedUserName = localStorage.getItem(USSERNAME_KEY);
+
+if (savedUserName === null){
+    //localStorage에 유저 정보 없을 때
+    //show the form
+    loginForm.classList.remove(HIDDEN_CLASSNAME);
+    loginForm.addEventListener("submit", onLoginSubmit);
+}
+else {
+    //show the greeting
+    paintGreetings(savedUserName);
+}
+
+
+
+// ===========================================================================================================
+//const h1 = document.querySelector("div.hello:first-child h1");      // CSS 방식.. class hello를 찾고
 
 // h1 click
-function handleTitleClick(){
-    const clickedClass ="clickActive";
+//function handleTitleClick(){
+    //const clickedClass ="clickActive";
 
-    h1.classList.toggle(clickedClass);
-    // toggle로 대체 가능 <like button> ----------------------------
-    // if (h1.classList.contains(clickedClass)) {
-    //     h1.classList.remove(clickedClass);
-    // }
-    // else{
-    //     h1.classList.add(clickedClass);
-    // }
-    // -----------------------------------------------
+    //h1.classList.toggle(clickedClass);
+    //// toggle로 대체 가능 <like button> ----------------------------
+    //// if (h1.classList.contains(clickedClass)) {
+    ////     h1.classList.remove(clickedClass);
+    //// }
+    //// else{
+    ////     h1.classList.add(clickedClass);
+    //// }
+    //// -----------------------------------------------
 
 
     /*  
@@ -22,9 +84,9 @@ function handleTitleClick(){
         -> 이것처럼 CSS 변경 사항을 자바스크립트에서 직접 처리하는 것보다 
             위처럼 CSS에서 처리하고 여기서 동작하게 만드는 게 좋은 구조 
     */
-}
+// }
 
-h1.addEventListener("click", handleTitleClick);
+// h1.addEventListener("click", handleTitleClick);
 
 
 
@@ -85,8 +147,6 @@ getElementsByTagName()      : Tag 가져와서 array에 할당
 queryselector/querySelectAll  : element를 CSS 방식으로 검색할 수 있음, 해당 Tag 및 id Class name에 속한 요소 불러올 수 있고, 
                             중복 요소 많으면 (첫번째 요소/모든 조건) 보여줌
 */
-
-
 
 
 

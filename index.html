@@ -4,18 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">    <!-- connected CSS!  //  rel : relationship -->
-    <title>Momentum</title>
+    <title>Momentum App</title>
 </head>
 <body>
-    <div class="hello">
-        <h1 class="coolFont">Click me!</h1>
-    </div>
-    <!-- <div class="hello">
-        <h1>Grab me!</h1>
-    </div>
-    <div class="hello">
-        <h1>Hold me!</h1> -->
-    </div>
+    <form class="hidden" id="loginForm">
+        <input
+            required
+            maxlength="15"
+            type="text"
+            placeholder="what is your name?" 
+        />
+        <input type="submit" value="Log In">
+        <!-- 위와 같은 버튼 <button>Log In</button> -->
+    </form>
+    <h1 id="greeting" class="hidden"></h1>
+    <!-- <a href="https://www.premierleague.com/tables">Go to PL Team Rank tables</a> -->
     <script src="app.js"></script>  <!-- connected JavaScript! -->
 </body>
 </html>

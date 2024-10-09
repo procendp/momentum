@@ -1,4 +1,8 @@
-body {
+.hidden {
+    display: none;  /* hide element */
+}
+
+/* body {
     background-color: beige;
 }
 
@@ -9,4 +13,4 @@ h1 {
 
 .clickActive {
     color: tomato;
-}
+} */
