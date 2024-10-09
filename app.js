@@ -7,7 +7,7 @@ const link= document.querySelector("a");
 const greeting = document.querySelector("#greeting")
 
 const HIDDEN_CLASSNAME = "hidden";  //string 담는 건 대문자로 써주는 게 관례
-const USSERNAME_KEY = "userName";  //string 담는 건 대문자로 써주는 게 관례
+const USERNAME_KEY = "userName";  //string 담는 건 대문자로 써주는 게 관례
 
 function onLoginSubmit(event){
     event.preventDefault();  // preventDefault() : 어떤 event의 기본 행동이든지 발생되지 않도록 막는 것
@@ -35,7 +35,7 @@ function onLoginSubmit(event){
 // }
 
 // loginButton.addEventListener("click", onLoginBtnClick)
-loginForm.addEventListener("submit", onLoginSubmit)
+// loginForm.addEventListener("submit", onLoginSubmit)
 // link.addEventListener("click", handleLinkClick)
 
 function paintGreetings(userName){
@@ -44,7 +44,7 @@ function paintGreetings(userName){
     // greeting.innerText = "Hello " + userName + "!";
 }
 
-const savedUserName = localStorage.getItem(USSERNAME_KEY);
+const savedUserName = localStorage.getItem(USERNAME_KEY);
 
 if (savedUserName === null){
     //localStorage에 유저 정보 없을 때
