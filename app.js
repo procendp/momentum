@@ -1,22 +1,22 @@
-const loginForm = document.querySelector("#loginForm");
-const loginInput = document.querySelector("#loginForm input");
+// const loginForm = document.querySelector("#loginForm");
+// const loginInput = document.querySelector("#loginForm input");
 // const loginInput = loginForm.querySelector("input");
 // const loginButton = loginForm.querySelector("button");
 
-const link= document.querySelector("a");
-const greeting = document.querySelector("#greeting")
+// const link= document.querySelector("a");
+// const greeting = document.querySelector("#greeting")
 
-const HIDDEN_CLASSNAME = "hidden";  //string 담는 건 대문자로 써주는 게 관례
-const USERNAME_KEY = "userName";  //string 담는 건 대문자로 써주는 게 관례
+// const HIDDEN_CLASSNAME = "hidden";  //string 담는 건 대문자로 써주는 게 관례
+// const USERNAME_KEY = "userName";  //string 담는 건 대문자로 써주는 게 관례
 
-function onLoginSubmit(event){
-    event.preventDefault();  // preventDefault() : 어떤 event의 기본 행동이든지 발생되지 않도록 막는 것
-                                                // 누군가 form을 submit하면 브라우저는 기본적으로 페이지를 새로고침하는데 이걸로 막음
+// function onLoginSubmit(event){
+//     event.preventDefault();  // preventDefault() : 어떤 event의 기본 행동이든지 발생되지 않도록 막는 것
+//                                                 // 누군가 form을 submit하면 브라우저는 기본적으로 페이지를 새로고침하는데 이걸로 막음
     
-    loginForm.classList.add(HIDDEN_CLASSNAME);  // 로그인 후 input란 숨겨주기
-    const userName = loginInput.value;
-    localStorage.setItem(USSERNAME_KEY, userName); // input된 값 localStorage에 저장
-    paintGreetings(userName);
+//     loginForm.classList.add(HIDDEN_CLASSNAME);  // 로그인 후 input란 숨겨주기
+//     const userName = loginInput.value;
+//     localStorage.setItem(USSERNAME_KEY, userName); // input된 값 localStorage에 저장
+//     paintGreetings(userName);
     // const userName = loginInput.value;
        // if (userName === "") {
        //     // loginInput.value = "hello "
@@ -27,7 +27,7 @@ function onLoginSubmit(event){
         
        // }
        // console.log(loginInput.value);
-}
+// }
 
 // function handleLinkClick(event){
 //     event.preventDefault();
@@ -38,24 +38,24 @@ function onLoginSubmit(event){
 // loginForm.addEventListener("submit", onLoginSubmit)
 // link.addEventListener("click", handleLinkClick)
 
-function paintGreetings(userName){
-    greeting.classList.remove(userName);    // 숨어있던 greeting 보여주기
-    greeting.innerText = `Hello ${savedUserName}!!`;
-    // greeting.innerText = "Hello " + userName + "!";
-}
+// function paintGreetings(userName){
+//     greeting.classList.remove(userName);    // 숨어있던 greeting 보여주기
+//     greeting.innerText = `Hello ${savedUserName}!!`;
+//     // greeting.innerText = "Hello " + userName + "!";
+// }
 
-const savedUserName = localStorage.getItem(USERNAME_KEY);
+// const savedUserName = localStorage.getItem(USERNAME_KEY);
 
-if (savedUserName === null){
-    //localStorage에 유저 정보 없을 때
-    //show the form
-    loginForm.classList.remove(HIDDEN_CLASSNAME);
-    loginForm.addEventListener("submit", onLoginSubmit);
-}
-else {
-    //show the greeting
-    paintGreetings(savedUserName);
-}
+// if (savedUserName === null){
+//     //localStorage에 유저 정보 없을 때
+//     //show the form
+//     loginForm.classList.remove(HIDDEN_CLASSNAME);
+//     loginForm.addEventListener("submit", onLoginSubmit);
+// }
+// else {
+//     //show the greeting
+//     paintGreetings(savedUserName);
+// }
 
 
 
