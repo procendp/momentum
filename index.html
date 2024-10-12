@@ -7,6 +7,7 @@
     <title>Momentum App</title>
 </head>
 <body>
+    <h2 id="clock">00:00:00</h2>
     <form class="hidden" id="loginForm">
         <input
             required
@@ -17,8 +18,11 @@
         <input type="submit" value="Log In">
         <!-- 위와 같은 버튼 <button>Log In</button> -->
     </form>
-    <h2 id="clock">00:00:00</h2>
     <h1 id="greeting" class="hidden"></h1>
+    <form id="todoForm">
+        <input type="text" placeholder="Write a To Do and Press Enter" required/>
+    </form>
+    <ul id="todoList"></ul>
     <div id="quote">
         <span></span>
         <span></span>
@@ -28,5 +32,6 @@
     <script src="JavaScript/clock.js"></script>
     <script src="JavaScript/quote.js"></script>
     <script src="JavaScript/backgrounds.js"></script>
+    <script src="JavaScript/todo.js"></script>
 </body>
 </html>
